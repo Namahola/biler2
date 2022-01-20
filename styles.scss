@@ -1,0 +1,97 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "play";
+}
+
+//VARIABLES
+
+$colors: (
+  primary: #111344,
+  secondary: #efe9e7,
+  tertiary: #52154e,
+  quaternary: #dae0f2,
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+$font-sizes: (
+  xl: 3.5rem,
+  lg: 3rem,
+  md: 2rem,
+  sm: 1.5rem,
+  xs: 1.2rem,
+);
+
+@function size($size) {
+  @return map-get($font-sizes, $size);
+}
+
+//LAYOUT
+
+.header {
+  background-color: color(primary);
+  height: 100px;
+  &-heading {
+    color: color(secondary);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: size(lg);
+  }
+}
+
+.section1 {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+#list {
+  background-color: color(quaternary);
+  text-align: center;
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+#root {
+  padding: 50px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+
+#newCars {
+  padding: 50px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+
+#facts {
+  padding: 50px;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr 1fr;
+}
+
+button {
+  border: none;
+  padding: 10px;
+}
+
+h2 {
+  font-size: size(md);
+  text-align: center;
+  text-transform: uppercase;
+}

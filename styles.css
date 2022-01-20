@@ -1,20 +1,86 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   list-style: none;
+  font-family: "play";
+}
+
+.header {
+  background-color: #111344;
+  height: 100px;
+}
+
+.header-heading {
+  color: #efe9e7;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.section1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4fr 1fr;
+      grid-template-columns: 4fr 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+#list {
+  background-color: #dae0f2;
+  text-align: center;
 }
 
 img {
   height: 150px;
   width: 150px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #root {
   padding: 50px;
+  display: -ms-grid;
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
 }
+
+#newCars {
+  padding: 50px;
+  display: -ms-grid;
+  display: grid;
+  gap: 30px;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+#facts {
+  padding: 50px;
+  display: -ms-grid;
+  display: grid;
+  gap: 30px;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+}
+
+button {
+  border: none;
+  padding: 10px;
+}
+
+h2 {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=styles.css.map */

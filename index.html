@@ -5,12 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Biler</title>
   </head>
   <body>
-    <div id="root"></div>
-    <div id="list"></div>
+    <header class="header">
+      <h1 class="header-heading">Biler til salg</h1>
+    </header>
+
+    <section class="section1">
+      <div id="root"></div>
+      <div id="list"></div>
+    </section>
+
+    <h2>Nye biler</h2>
+    <div id="newCars"></div>
+
+    <h2>Fakta</h2>
+    <div id="facts"></div>
+
+    <h2>Kontakt os</h2>
+    <form id="contactForm" method="post">
+      <label for="phone">Telefon:</label>
+      <input id="phone" type="text" name="phone" />
+      <label for="msg">Din besked:</label>
+      <textarea name="message" id="msg"></textarea>
+      <button type="submit">Submit</button>
+    </form>
 
     <script src="script.js"></script>
+    <script src="newCars.js"></script>
+    <script src="facts.js"></script>
+    <script src="contact.js"></script>
   </body>
 </html>

@@ -18,15 +18,6 @@ const cars = [
     url: "./img/chevroletBoltEV.jpg",
   },
   {
-    name: "Hyundai Ioniq 5",
-    year: 2021,
-    color: "Silver",
-    topspeed: "185 km/h",
-    horsepower: "168",
-    range: "383 kilometers",
-    url: "./img/hyundaiIoniq5.jpg",
-  },
-  {
     name: "Tesla model Y",
     year: 2021,
     color: "Blue",
@@ -91,61 +82,81 @@ const carList = [];
 const showList = () => {
   list.innerText = "";
   for (let i = 0; i < carList.length; i++) {
-    list.innerText += carList[i].name;
+    let listContainer = document.createElement("div");
+    listContainer.className = "listContainer";
+
+    let listItem = document.createElement("li");
+    listContainer.appendChild(listItem);
+    listItem.innerText += carList[i].name;
+
+    let listBtn = document.createElement("button");
+    listContainer.appendChild(listBtn);
+    listBtn.innerText = "Remove";
+    listBtn.onclick = () => removeCar(i);
+
+    list.appendChild(listContainer);
   }
 };
 
-const renderCar = () => {
-  for (i = 0; i < cars.length; i++) {
-    let box = document.createElement("div");
-    box.className = "box";
-
-    let list = document.createElement("ul");
-    box.appendChild(list);
-
-    let name = document.createElement("li");
-    name.innerText = cars[i].name;
-    box.appendChild(name);
-
-    let year = document.createElement("li");
-    year.innerText = cars[i].year;
-    box.appendChild(year);
-
-    let color = document.createElement("li");
-    color.innerText = cars[i].color;
-    box.appendChild(color);
-
-    let topspeed = document.createElement("li");
-    topspeed.innerText = cars[i].topspeed;
-    box.appendChild(topspeed);
-
-    let horsepower = document.createElement("li");
-    horsepower.innerText = cars[i].horsepower;
-    box.appendChild(horsepower);
-
-    let range = document.createElement("li");
-    range.innerText = cars[i].range;
-    box.appendChild(range);
-
-    let img = document.createElement("img");
-    img.src = cars[i].url;
-    img.className = "img";
-    box.appendChild(img);
-
-    let btn = document.createElement("button");
-    btn.innerText = "Add to list";
-    btn.addEventListener("click", addCar);
-    box.appendChild(btn);
-
-    root.appendChild(box);
+const showCars = () => {
+  for (let i = 0; i < cars.length; i++) {
+    const car = cars[i];
+    renderCar(car);
   }
+};
+
+const renderCar = (car) => {
+  let box = document.createElement("div");
+  box.className = "box";
+
+  let list = document.createElement("ul");
+  box.appendChild(list);
+
+  let name = document.createElement("li");
+  name.innerText = car.name;
+  box.appendChild(name);
+
+  let year = document.createElement("li");
+  year.innerText = car.year;
+  box.appendChild(year);
+
+  let color = document.createElement("li");
+  color.innerText = car.color;
+  box.appendChild(color);
+
+  let topspeed = document.createElement("li");
+  topspeed.innerText = car.topspeed;
+  box.appendChild(topspeed);
+
+  let horsepower = document.createElement("li");
+  horsepower.innerText = car.horsepower;
+  box.appendChild(horsepower);
+
+  let range = document.createElement("li");
+  range.innerText = car.range;
+  box.appendChild(range);
+
+  let img = document.createElement("img");
+  img.src = car.url;
+  img.className = "img";
+  box.appendChild(img);
+
+  let btn = document.createElement("button");
+  btn.innerText = "Add to list";
+  btn.onclick = () => addCar(car);
+  box.appendChild(btn);
+
+  root.appendChild(box);
 };
 
 const addCar = (indexToAdd) => {
-  const index = carList.indexOf(indexToAdd);
-  console.log(index);
   carList.push(indexToAdd);
   showList();
 };
 
-renderCar();
+const removeCar = (indexToRemove) => {
+  carList.splice(indexToRemove, 1);
+  showList();
+};
+
+showCars();
