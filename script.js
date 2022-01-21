@@ -83,7 +83,7 @@ const showList = () => {
   list.innerText = "";
   for (let i = 0; i < carList.length; i++) {
     let listContainer = document.createElement("div");
-    listContainer.className = "listContainer";
+    listContainer.className = "liContainer";
 
     let listItem = document.createElement("li");
     listContainer.appendChild(listItem);
@@ -110,39 +110,41 @@ const renderCar = (car) => {
   box.className = "box";
 
   let list = document.createElement("ul");
+  list.className = "carSpecs";
   box.appendChild(list);
-
-  let name = document.createElement("li");
-  name.innerText = car.name;
-  box.appendChild(name);
-
-  let year = document.createElement("li");
-  year.innerText = car.year;
-  box.appendChild(year);
-
-  let color = document.createElement("li");
-  color.innerText = car.color;
-  box.appendChild(color);
-
-  let topspeed = document.createElement("li");
-  topspeed.innerText = car.topspeed;
-  box.appendChild(topspeed);
-
-  let horsepower = document.createElement("li");
-  horsepower.innerText = car.horsepower;
-  box.appendChild(horsepower);
-
-  let range = document.createElement("li");
-  range.innerText = car.range;
-  box.appendChild(range);
 
   let img = document.createElement("img");
   img.src = car.url;
   img.className = "img";
-  box.appendChild(img);
+  list.appendChild(img);
+
+  let name = document.createElement("li");
+  name.innerText = "Model: " + car.name;
+  list.appendChild(name);
+
+  let year = document.createElement("li");
+  year.innerText = "Year: " + car.year;
+  list.appendChild(year);
+
+  let color = document.createElement("li");
+  color.innerText = "Color: " + car.color;
+  list.appendChild(color);
+
+  let topspeed = document.createElement("li");
+  topspeed.innerText = "Topspeed: " + car.topspeed;
+  list.appendChild(topspeed);
+
+  let horsepower = document.createElement("li");
+  horsepower.innerText = "Horsepower: " + car.horsepower;
+  list.appendChild(horsepower);
+
+  let range = document.createElement("li");
+  range.innerText = "Range: " + car.range;
+  list.appendChild(range);
 
   let btn = document.createElement("button");
   btn.innerText = "Add to list";
+  btn.className = "addBtn";
   btn.onclick = () => addCar(car);
   box.appendChild(btn);
 
