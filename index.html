@@ -5,12 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <title>Biler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Cars</title>
   </head>
   <body>
-    <div id="root"></div>
-    <div id="list"></div>
+    <header class="header">
+      <h1 class="header-heading">CARS</h1>
+    </header>
+
+    <section class="section1">
+      <div id="root"></div>
+      <div class="list-container">
+        <h3>My favorite cars</h3>
+        <div id="list"></div>
+      </div>
+      </div>
+    </section>
+
+    <section class="section2">
+      <div class="section2-container">
+        <h2 class="section2-container-heading">New cars</h2>
+      </div>
+      <div id="newCars"></div>
+    </section>
+
+    <section class="section3">
+      <div class="section3-container">
+        <h2 class="section3-container-heading">Facts about cars</h2>
+      </div>
+      <div id="facts"></div>
+    </section>
+    
+<div class="contact">
+  <div class="contact-container">
+    <h2 class="contact-container-heading">Contact</h2>
+  </div>
+    <div id="errorMsg"></div>
+    <form id="contactForm" method="post" class="contact-form">
+      <label for="phone">Phone:</label>
+      <input id="phone" type="text" name="phone" />
+      <label for="msg">Your message:</label>
+      <textarea name="message" id="msg"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="success">Thanks for your message!</div>
+</div>
+  
 
     <script src="script.js"></script>
+    <script src="newCars.js"></script>
+    <script src="facts.js"></script>
+    <script src="contact.js"></script>
   </body>
 </html>
